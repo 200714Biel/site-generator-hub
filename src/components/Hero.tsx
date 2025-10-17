@@ -3,6 +3,16 @@ import { Button } from "@/components/ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
 export const Hero = () => {
+  const scrollToUpload = () => {
+    const uploadSection = document.getElementById('upload-section');
+    uploadSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToFeatures = () => {
+    const featuresSection = document.getElementById('features-section');
+    featuresSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background with gradient overlay */}
@@ -34,11 +44,20 @@ export const Hero = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-in fade-in slide-in-from-bottom-7 duration-700 delay-500">
-          <Button size="lg" className="text-lg px-8 shadow-glow hover:shadow-glow/50 transition-all">
+          <Button 
+            size="lg" 
+            className="text-lg px-8 shadow-glow hover:shadow-glow/50 transition-all"
+            onClick={scrollToUpload}
+          >
             <Upload className="w-5 h-5 mr-2" />
             Começar Agora
           </Button>
-          <Button size="lg" variant="secondary" className="text-lg px-8">
+          <Button 
+            size="lg" 
+            variant="secondary" 
+            className="text-lg px-8"
+            onClick={scrollToFeatures}
+          >
             Ver Recursos
           </Button>
         </div>
